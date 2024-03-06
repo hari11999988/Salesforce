@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="Calculator Parent" icons>
+    <lightning-combobox 
+    name="Action"
+    label="Action"
+    value={value}
+    placeholder="Action"
+    options={options}
+    onchange={handleChange} >
+    </lightning-combobox>
+
+            <lightning-input label="Input1" onchange={handleImput1} type="number"></lightning-input>
+            <lightning-input label="Input2" onchange={handleImput2} type="number"></lightning-input> &nbsp;&nbsp;
+ 
+            <lightning-button label="Calculate" variant="brand" onclick={handleAction}></lightning-button>
+        </lightning-card> 
+
+        <!--c-trst-child get-result={Result}></c-trst-child-->
+</template>

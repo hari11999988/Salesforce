@@ -1,0 +1,64 @@
+<apex:page >
+    
+    <style>
+      .FontStyle{
+          font-family: Tahoma, Verdana, sans-serif;
+          font-size: large;
+          color: blue;
+
+        }
+       
+    
+    </style>
+    
+     
+        <apex:form >
+  
+    <apex:pageBlock id="refresh" >
+        
+        <!--div>
+          
+                   
+            <center> <h1 style = "font-size: 50px;"> Car details </h1><br/></center>
+         
+            <apex:inputText value="{!searchText}" html-placeholder="Enter Car to search" />
+            
+             <apex:commandButton value="Search" action="{!search}"   reRender="refresh"/>
+            
+            
+            
+        </div>
+       
+        
+  <!----------------------------------------------------------------------------------------------------------------------------------------->
+        
+        <div>
+            <!--apex:repeat value="{!Carlist}" var="eachcar"-->
+            
+            <!--apex:outputField value="{!eachcar.Car_Image__c}"/--> 
+            <apex:outputField title="Name" styleClass="FontStyle" />
+            <!--apex:outputField value="{!eachcar.Cost_Per_Day__c}"/> 
+            <apex:outputField value="{!eachcar.Seat_Capacity__c}"/> 
+            <apex:outputField value="{!eachcar.Car__c}"/> 
+            <!--/apex:repeat-->
+        </div>
+        
+ <!----------------------------------------------------------------------------------------------------------------------------------------->
+        
+        <!--div>
+            
+            <apex:pageBlockButtons location="bottom">
+                 
+            	 <apex:commandButton value="Previous" action="{!Previous}"   reRender="refresh" disabled="{!disPre}" />
+                 <apex:commandButton value="Next" action="{!Next}"  reRender="refresh" disabled="{!disNext}" /> 
+                 
+            </apex:pageBlockButtons>
+            
+        </div--> 
+            
+   
+    </apex:pageBlock>
+        
+    </apex:form>
+    
+</apex:page>

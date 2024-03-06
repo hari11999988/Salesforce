@@ -1,0 +1,13 @@
+<template>
+    <lightning-card>
+        <lightning-input label="First number" value={input1} onchange={input1handler}></lightning-input>
+        <lightning-input label="Second number" value={input2} onchange={inputhandler}></lightning-input>
+        
+        <lightning-button variant="brand" label="  +  " onclick={addition}></lightning-button>
+        <lightning-button variant="brand" label="  -  " onclick={substraction}></lightning-button>
+        <lightning-button variant="brand" label="  *  " onclick={multiplication}></lightning-button>
+        <lightning-button variant="brand" label="  /  " onclick={division}></lightning-button>
+
+        <lightning-input label="Result " value={result} read-only="true"></lightning-input>
+    </lightning-card>
+</template>

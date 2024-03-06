@@ -1,0 +1,42 @@
+<apex:page >
+ 
+     
+  
+    <div style="background-image:url('https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80s'); height:780px; width:1500px; background-size:cover;">
+        
+        <div style="color:Black; font-size:30px; font-family:bold;">
+     <marquee> <b> About Us </b></marquee>
+    
+     
+        </div> <br/>  <br/>
+     
+   <div  style="color:black; font-size:20px; margin-left:20px; font-family:cursive; ">
+            
+       <h1 style="font-size:25px;"> India’s Beloved<br/> Car Taxi service</h1>
+       <br/>
+      
+       <b style="font-size:25px;">We are not an option, we are a choice</b>
+       <p> We're #1 choice of 10 Million people because<br/>
+           we're the solution of India's intra-city commuting problems.<br/>
+    With assured safety, we also provide economically priced rides. </p>
+       <b style="font-size:25px;">What makes us different?</b>
+       <p>Our car taxis can dodge the traffic during peak hours 
+           and <br/> getyou to the destination in a jiffy! So when you<br/> think travel, think ibirds  car services.</p>
+       
+        <b style="font-size:25px; " >what makes MyChoize self-drive car rental service your first choice for renting self drive cars.</b>
+       <br/>
+       <br/>
+   
+    <li>Rent a Self-Drive Car by the Hour, Day, Week or Month.</li>
+    <li>Unlimited Kilometers - No hassle of keeping fuel slips and seeking reimbursements.</li>
+    <li>Newest Fleet of Cars across Categories.</li>
+    <li>Lowest Fares Guaranteed</li>
+    <li>All Inclusive Fares - No additional cost for Insurance, Tax or Pollution.</li>
+    <li>Your maximum liability in case of an accident is limited to your refundable security deposit</li>
+       <br/>
+       <b style="font-size:30px;">So what are you waiting for? Time to book and ride!</b>
+        </div>
+       
+    
+    </div>
+</apex:page>

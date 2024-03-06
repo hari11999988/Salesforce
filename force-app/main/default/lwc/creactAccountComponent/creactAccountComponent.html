@@ -1,0 +1,32 @@
+<template>
+    <lightning-card title="Create Account">
+        <div class="slds-p-horizontal_small">
+            <template if:true={accountId}>
+                <lightning-input label="Account Id" disabled="false" value={accountIdValue}></lightning-input>
+            </template>
+            <lightning-input label="Name" onchange={onchangeHandle} class="input" required="true" disabled={disabled}></lightning-input>
+            <lightning-input label="Phone" onchange={onchangeHandle} class="input" required="true" type="number" disabled={disabled}></lightning-input>
+            <lightning-input label="BillingCity" onchange={onchangeHandle} class="input" required="true" disabled={disabled}></lightning-input> <br>
+
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col">
+                  <lightning-button label="New Account" variant="Brand" onclick={newAccountHandle} disabled={newAccountDisabled}></lightning-button>
+                </div>
+                <div class="slds-col">
+                    <lightning-button label="Save" variant="Success" onclick={saveHandle} disabled={saveDisabled}></lightning-button>
+                </div>
+              </div>
+        </div>
+    </lightning-card>
+    <lightning-card title="Recent Account Created">
+        <template if:true={data}>
+            <lightning-datatable data={data}
+                                 columns={columns}
+                                 key-field="id"
+                                 onrowaction={onRowActionHandler}>
+                                 </lightning-datatable>
+      
+        </template>
+    </lightning-card>
+    
+</template>

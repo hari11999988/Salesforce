@@ -1,0 +1,22 @@
+<apex:page controller="ContactController">
+    
+    <apex:form >
+        
+        <apex:pageBlock >
+        
+        <apex:pageBlockSection columns="3">
+            
+            <apex:repeat value="{!conList}" var="eachCon">
+                <apex:inputCheckbox value="{!checkBox}"/>
+                <apex:outputLabel >{!eachCon.Lastname}</apex:outputLabel>
+                <apex:outputLabel >{!eachCon.Email}</apex:outputLabel>
+            
+            </apex:repeat>
+        
+        </apex:pageBlockSection>
+            
+            </apex:pageBlock>
+    
+    </apex:form>
+    
+</apex:page>

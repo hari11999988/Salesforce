@@ -1,0 +1,44 @@
+<apex:page controller="ContactVFpageController">
+    
+    <apex:form >
+        
+        <apex:pageBlock >
+           
+            <apex:pageBlockTable value="{!WrapperClassList}" var="contactObj" id="formid" >
+                
+                <apex:column value="{!contactObj.cont.Name}"/>
+                <apex:column value="{!contactObj.cont.Email}"/>
+                <apex:column value="{!contactObj.cont.Phone}"/>
+                <apex:column value="{!contactObj.MailingAddress}">
+                     <apex:facet name="header">Mailing Address</apex:facet>
+                </apex:column>
+                    
+               
+                
+                <apex:column >
+                    <apex:facet name="header" >Action</apex:facet>
+                    
+                    <apex:commandLink value="EDIT" action="{!editRec}" >
+                    <apex:param name="rowId" assignTo="{!contactId}" value="{!contactObj.cont.Id}"/>
+                    </apex:commandLink>
+                    &nbsp;|&nbsp;
+                     
+                     <!--<apex:commandLink value="DEL" action="{!deleteRec}"  reRender="formid">-->
+                    
+                      <apex:commandLink action="{!deleteRec}" value="DEL" reRender="formid"  >
+                          
+                          <apex:actionSupport event="OnClick" />
+                          <apex:param name="rowId" assignTo="{!contactId}" value="{!contactObj.cont.Id}"/>
+                     
+                    </apex:commandLink>
+                      
+                 </apex:column>
+                
+            </apex:pageBlockTable>
+                
+            
+        </apex:pageBlock>
+        
+    </apex:form>
+            
+</apex:page>

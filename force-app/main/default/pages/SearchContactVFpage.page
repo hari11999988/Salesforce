@@ -1,0 +1,125 @@
+<apex:page controller="PeginationConta">
+    
+    <style>
+    
+        .hedding{
+           border:0.5px solid gray;
+          
+
+        }
+        
+        
+        .tableClass{
+        	 width: 80%;
+             text-align: center;
+             background-color:powderblue;
+        } 
+        .searchB
+        {
+           margin-left: 20px !important;
+           height:40px; 
+           width:70px;
+           background:red !important;
+        }
+        
+        .searchBar
+        {
+           margin-left: 190px !important;
+           border:5px solid orange;
+           height:40px;
+           width:200px;
+        }
+        
+        .pageSixe
+        {
+           margin-left: 1100px !important;
+           height:30px; 
+           width:70px;
+        }
+        
+    
+    </style>
+    
+     
+        <apex:form >
+  
+    <apex:pageBlock id="refresh" >
+        
+        <div>
+          
+                   
+            <center> <h1 style = "font-size: 50px;"> All Contact </h1><br/></center>
+         
+            <apex:inputText value="{!searchText}" html-placeholder="Enter name or email to search"  styleClass="searchBar"/>
+            
+             <apex:commandButton value="Search" action="{!search}"  styleClass="searchB" reRender="refresh"/>
+            
+            
+            <apex:selectList size="1" value="{!pageSize}" multiselect="false" styleClass="pageSixe" >
+                <apex:actionSupport action="{!onChange}" event="onchange" reRender="refresh"/>
+                
+                <apex:selectOption itemValue="5" itemLabel="5" ></apex:selectOption>
+                <apex:selectOption itemValue="10" itemLabel="10"></apex:selectOption>
+                <apex:selectOption itemValue="15" itemLabel="15"></apex:selectOption>
+                <apex:selectOption itemValue="20" itemLabel="20"></apex:selectOption>
+                <apex:selectOption itemValue="25" itemLabel="25"></apex:selectOption>
+            </apex:selectList>
+             
+        </div>
+       
+        
+  <!----------------------------------------------------------------------------------------------------------------------------------------->
+        
+        <div>
+            
+     <center>
+        <table class="tableClass" cellpadding="10px" cellspacing="0"> 
+            
+            <tr >
+                
+                <th class="hedding">Name</th>
+                <th class="hedding">Email</th>
+                <th class="hedding">AccountNumber</th>
+                <th class="hedding">Phone</th>
+               
+                
+            </tr>
+            
+            <apex:repeat value="{!contactList}" var="eachontact">
+            
+            <tr >
+                
+                <td class="hedding">{!eachontact.Name}</td>
+                <td class="hedding">{!eachontact.Email}</td>
+                <td class="hedding">{!eachontact.AccountId}</td>
+                <td class="hedding">{!eachontact.Phone}</td>
+               
+            
+            </tr>
+                
+            </apex:repeat>
+            
+        </table>
+        </center>
+        </div>
+        
+ <!----------------------------------------------------------------------------------------------------------------------------------------->
+        
+        <div>
+            
+            <apex:pageBlockButtons location="bottom">
+                 <apex:commandButton value="Start" action="{!start}"  reRender="refresh" disabled="{!dis}" /> 
+            	 <apex:commandButton value="Previous" action="{!Previous}"   reRender="refresh" disabled="{!disPre}" />
+                 <apex:commandButton value="Next" action="{!Next}"  reRender="refresh" disabled="{!disNext}" /> 
+                 <apex:commandButton value="End" action="{!End}"  reRender="refresh" disabled="{!disEnd}" /> 
+                
+            </apex:pageBlockButtons>
+            
+        </div> 
+            
+   
+    </apex:pageBlock>
+        
+    </apex:form>
+    
+</apex:page>

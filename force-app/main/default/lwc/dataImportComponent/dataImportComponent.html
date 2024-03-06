@@ -1,0 +1,33 @@
+<template>
+    <lightning-card title="Data Import Tool">
+        <div class="slds-p-horizontal_large">
+            <lightning-combobox label="Object"
+                                type="file" 
+                                accept=".csv"
+                                value={value}
+                                options={objectOpton}
+                                placeholder="Select Object"
+                                onchange={onclickHandler}
+                                >
+                
+            </lightning-combobox> <br>
+
+            <div >
+                <lightning-input type="file"
+                             label="CSV file"                                     
+                             multiple="false"
+                             accept=".csv"
+                             onchange={uploadFileHandler}></lightning-input>
+                             <template if:true={filename}>
+                                   <b><span style="color: green;">{filename}</span></b>
+                             </template>
+            </div> <br>
+
+            <center>
+                <lightning-button label="Next" variant="brand" onclick={buttonHandler} ></lightning-button>
+            </center>
+
+        </div>
+    </lightning-card>
+    
+</template>

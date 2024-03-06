@@ -1,0 +1,23 @@
+<template>
+
+    <lightning-card title="REcord Edit Form">
+
+        <lightning-record-edit-form object-api-name={objectApiName}
+                                    onsuccess={successhandle}
+                                    density="auto"
+    >
+        <lightning-input-field field-name="id" value={recordId}></lightning-input-field>
+                                    
+
+        <lightning-input-field field-name={nameField}></lightning-input-field>
+        <lightning-input-field field-name={accnoField}></lightning-input-field> 
+        <lightning-input-field field-name={phoneField}></lightning-input-field> 
+        <lightning-input-field field-name={faxField}></lightning-input-field>                             
+        </lightning-record-edit-form>
+
+        <lightning-button label="submit" variant="brand" type="submit" onclick={successhandle}></lightning-button>
+
+
+    </lightning-card>
+    
+</template>

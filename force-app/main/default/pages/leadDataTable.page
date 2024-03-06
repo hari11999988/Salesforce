@@ -1,0 +1,84 @@
+<apex:page controller="LeadWrapperController" showHeader="false" tabStyle="Lead" title="Lead Wrapper" >
+    <apex:form >
+        <apex:actionFunction name="editReadOnly" action="{!editReadOnly}"/>
+        <!--<apex:actionFunction name="AddTable1" action="{!addTable1}"/>-->
+        <apex:pageBlock title="Lead" id="pageID" >
+            <apex:pageBlockButtons location="Top" >
+                <apex:commandButton value="Save" action="{!save}"/>
+                <apex:commandButton value="Remove Selected Lead" action="{!removeSelectedLeads}" disabled="{!disabled}"/>
+                <apex:commandButton action="{!cancel}" value="Cancel" immediate="true"/>
+            </apex:pageBlockButtons>
+             <apex:pageBlockButtons location="Bottom" >
+                <apex:commandButton value="Add Selected Lead" action="{!addSelectedLeads}" disabled="{!adddisabled}"/>
+             </apex:pageBlockButtons>
+            
+             <!--1st Data Table Start Here-->
+            <apex:pageBlockSection columns="1" collapsible="false" title="All Lead Records Data" >
+                <apex:pageBlockTable value="{!leadList}" var="le">
+                    <apex:column headerValue="Action" style="width:15%;">
+                        <apex:commandButton value="Add" action="{!addItem}" reRender="pageID"  >
+                            <apex:param name="addId" value="{!le.lead.id}" assignTo="{!addId}"/>
+                        </apex:commandButton>&nbsp; | &nbsp;
+                        <apex:commandButton value="Delete" action="{!deleteItem}" reRender="pageID"  >
+                            <apex:param name="deleteId" value="{!le.lead.id}" assignTo="{!deleteId}"/>
+                            <apex:param name="indexNo" value="{!le.index}" assignTo="{!indexNo}"/>
+                        </apex:commandButton>
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">
+                            <apex:inputCheckbox value="{!allChecked}" >
+                                <apex:actionSupport event="onclick" action="{!CheckAll}" rerender="pageID"/>
+                            </apex:inputCheckbox>
+                        </apex:facet>
+                        <apex:inputCheckbox value="{!le.checkBox}" onchange="editReadOnly()"  />
+                    </apex:column>
+                    <apex:column headerValue="First Name">
+                        <apex:inputField value="{!le.lead.FirstName}"  rendered="{!le.showData}" />
+                        <apex:outputText value="{!le.lead.FirstName}" rendered="{!!le.showData}" />
+                    </apex:column>
+                    <apex:column headerValue="Last Name">
+                        <apex:inputField value="{!le.lead.LastName}" rendered="{!le.showData}" required="false" />
+                        <apex:outputText value="{!le.lead.LastName}" rendered="{!!le.showData}" />
+                    </apex:column>
+                    <apex:column headerValue="Comapny">
+                        <apex:inputField value="{!le.lead.Company}" rendered="{!le.showData}" />
+                        <apex:outputText value="{!le.lead.Company}" rendered="{!!le.showData}" />
+                    </apex:column>
+                    <apex:column headerValue="Email">
+                        <apex:inputField value="{!le.lead.Email}" rendered="{!le.showData}" />
+                        <apex:outputText value="{!le.lead.Email}" rendered="{!!le.showData}" />
+                    </apex:column>
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+            <!--1st Data Table End Here-->
+           
+            <!--2nd Data Table Start Here-->
+            <apex:pageBlockSection columns="1" collapsible="false" title="Removed Lead Records Data">
+                <apex:pageBlockTable value="{!leadList2}" var="le">
+                    <apex:column >
+                      <apex:facet name="header">
+                            <apex:inputCheckbox value="{!allCheckeds}" >
+                                <apex:actionSupport event="onclick" action="{!CheckAlls}"/>
+                            </apex:inputCheckbox>
+                         </apex:facet>
+                         <apex:inputCheckbox value="{!le.checkBoxs}"  onchange="readOnly()" />
+                    </apex:column>
+                    <apex:column headerValue="First Name">
+                    	<apex:outputText value="{!le.lead.FirstName}" />
+                    </apex:column>
+                    <apex:column headerValue="Last Name">
+                         <apex:outputText value="{!le.lead.LastName}"  />
+                    </apex:column>
+                    <apex:column headerValue="Comapny">
+                    	<apex:outputText value="{!le.lead.Company}" />
+                    </apex:column>
+                    <apex:column headerValue="Email">
+                    	<apex:outputText value="{!le.lead.Email}" />
+                    </apex:column>
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+            <!--2nd Data Table End Here-->
+            
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

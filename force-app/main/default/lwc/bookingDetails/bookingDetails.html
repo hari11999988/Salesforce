@@ -1,0 +1,23 @@
+<template>
+    <template if:true={returnData}>
+        <template for:each={returnData} for:item="data">
+
+            <div key={data}>
+               
+                <lightning-record-view-form
+                    record-id={data.Id}
+                    object-api-name={objectApiName}
+                >
+                    <div class="slds-box">
+                        <lightning-output-field field-name={carName}></lightning-output-field>
+                        <lightning-output-field field-name={carImage}></lightning-output-field>
+                        <lightning-output-field field-name={dateData}> </lightning-output-field>
+                        <lightning-output-field field-name={daysData}></lightning-output-field>
+                        <lightning-output-field field-name={amountData}></lightning-output-field>
+                    </div>
+                </lightning-record-view-form>
+            </div>
+        </template>
+    </template>
+    
+</template>

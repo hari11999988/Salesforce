@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="child component">
+        <div style="height: 300px;">
+            <lightning-datatable
+                    key-field="name"
+                    data={data}
+                    class="dataTable"
+                    columns={columns}>
+            </lightning-datatable>
+            <lightning-button label="Submit" onclick={handleOnClick}></lightning-button>
+        </div>
+    </lightning-card>
+    
+</template>

@@ -1,0 +1,92 @@
+<template>
+    <lightning-card title="Case">
+
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col slds-size_2-of-3">
+                <div class="slds-p-horizontal_x-small">
+                    <lightning-input type="text" 
+                                                 value={searchKey}
+                                                 placeholder="Enter case number" 
+                                                 onchange={handelSearchKey}> 
+                    </lightning-input>
+                </div>
+            </div>
+            <div class="slds-col slds-size_1-of-3">
+                <div class="slds-p-top_medium">
+                    <lightning-button label="Search" variant="brand" onclick={SearchAccountHandler}></lightning-button>
+                </div> <br>
+            </div>
+        </div>
+
+            <template if:true={result}>
+                <center><b style="font-size: large; color: brown;">Case Details</b></center>
+                <div class="slds-p-horizontal_large">
+                    <div class="slds-grid slds-gutters">
+                        <div class="slds-col">
+                          <span>
+                              <lightning-input disabled="true" label="Id" value={result.Id}></lightning-input>
+                          </span>
+                        </div>
+                        <div class="slds-col">
+                          <span>
+                            <lightning-input disabled="true"  label="Case Number" value={result.CaseNumber}></lightning-input>
+                        </span>
+                        </div>
+                      </div>
+    
+                      <div class="slds-grid slds-gutters">
+                        <div class="slds-col">
+                          <span>
+                               <lightning-combobox label="Priority"
+                                                   value={priorityValue}
+                                                   options={priorityOption}
+                                                   disabled={edit}
+                                                   onchange={priorityOnchange}>
+
+                               </lightning-combobox>
+                              <!--lightning-input disabled={edit} label="Priority" value={result.Priority}></lightning-input-->
+                          </span>
+                        </div>
+                        <div class="slds-col">
+                          <span>
+                            <lightning-combobox label="Status"
+                                                value={StatusValue}
+                                                options={StatusOption}
+                                                disabled={edit}
+                                                onchange={StatusOnchange}>
+
+                            </lightning-combobox>
+                            <!--lightning-input disabled={edit} label="Status" value={result.Status}></lightning-input-->
+                          </span>
+                        </div>
+                      </div>
+                </div> <br><br>
+                  <center>
+                    <span class="slds-p-horizontal_xx-small">
+                        <lightning-button disabled={editDisable} label="Edit" variant="Brand" onclick={editHandel}></lightning-button>
+                    </span>
+                    <span class="slds-p-horizontal_xx-small">
+                        <lightning-button disabled={saveDisable} label="Save" variant="Brand" onclick={saveHandel}></lightning-button>
+                    </span>
+                    <span class="slds-p-horizontal_xx-small">
+                        <lightning-button label="Delete" variant="Brand" onclick={deleteHandel}></lightning-button>
+                    </span>
+                  </center>
+                 
+                  
+                  
+            </template>
+
+            <template if:true={resulttemplate}>
+                <center><b style="font-size: large; color: brown;">Enter valid case number</b></center>
+            </template>
+
+            
+        
+        
+
+        
+
+    </lightning-card>
+    
+</template>

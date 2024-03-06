@@ -1,0 +1,177 @@
+<template>
+
+    <div>
+
+        <div class="slds-grid slds-gutters">
+
+            <div class="slds-col">
+
+                <div class="slds-grid slds-wrap">
+
+                    <!--div class="slds-col slds-size_2-of-12"-->
+
+                    <template if:true={displayData}>
+                        <template for:each={displayData} for:item="eachcar">
+
+                            <div style="background-color: rgb(247, 234, 234)" key={eachcar} class="slds-col slds-size_12-of-12">
+                                <lightning-record-view-form record-id={eachcar.Id} object-api-name={objectApiName} >
+
+                                    
+                                    
+                                   
+
+                                    <div class="slds-grid slds-gutters">
+                                        <div class="slds-col">
+                                            <b> <lightning-output-field  field-name={fieldname}></lightning-output-field></b>
+                                            <lightning-output-field field-name={fieldcost}></lightning-output-field>
+                                            <lightning-output-field field-name={fieldmilage}></lightning-output-field>
+                                            <lightning-output-field field-name={fieldseat}></lightning-output-field>
+                                        </div>
+                                        <div class="slds-col">
+                                            <lightning-output-field class="image" field-name={fieldimage}></lightning-output-field>
+                                        </div>
+                                      </div>
+                                      <div align="center">
+                                        <lightning-button label="view" variant="brand" onclick={onclickHandle}
+                                        data-id={eachcar.Id}></lightning-button>
+                                    </div>
+                                    <br> <hr><br>
+                                    
+                                    
+
+
+                                </lightning-record-view-form>
+
+                            </div>
+
+
+                        </template>
+                        
+
+                    </template>
+
+                </div>
+                <!--/div-->
+            </div>
+        </div>
+
+    </div>
+
+    <!--**************************************************************************************************************************-->
+
+    <template if:true={modalData}>
+        <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-01"
+            class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse">
+                    <svg class="slds-button__icon slds-button__icon_large" aria-hidden="true">
+                        <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+                    </svg>
+                    <span class="slds-assistive-text">Cancel and close</span>
+                </button>
+                <div class="slds-modal__header">
+                    <h1 id="modal-heading-01" class="slds-modal__title slds-hyphenate">Car Details</h1>
+                </div>
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+
+                    <lightning-record-view-form record-id={dataForModel.Id}
+                        object-api-name={objectApiName}>
+                        <div >
+                            <lightning-output-field field-name="Name"></lightning-output-field>
+                            <lightning-output-field class="slds-size_1-of-4" field-name="Image__c"></lightning-output-field>
+                            <lightning-output-field field-name="Cost_per_day__c"></lightning-output-field>
+                            <lightning-output-field field-name="Milage__c"></lightning-output-field>
+                            <lightning-output-field field-name="Model__c"></lightning-output-field>
+                            <lightning-output-field field-name="Seat_cepacity__c"></lightning-output-field>
+                            <lightning-output-field field-name="Type__c"></lightning-output-field>
+                        </div>
+                        <!--lightning-button label="view" variant="brand"  onclick={onclickHandle} data-id={eachcar.Id}></lightning-button-->
+
+
+                    </lightning-record-view-form>
+                </div>
+                <div class="slds-modal__footer">
+                    <button class="slds-button slds-button_neutral" onclick={cancelHandle}
+                        aria-label="Cancel and close">Cancel</button>
+                    <button class="slds-button slds-button_brand" onclick={bookNowHandeler}
+                        data-id={dataForModel.Id}>Book Now</button>
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open" role="presentation">
+
+        </div>
+    </template>
+
+    <!--***************************************************************************************************************************-->
+
+    <template if:true={modelBooknow}>
+        <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-01"
+            class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse">
+                    <svg class="slds-button__icon slds-button__icon_large" aria-hidden="true">
+                        <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+                    </svg>
+                    <span class="slds-assistive-text">Cancel and close</span>
+                </button>
+                <div class="slds-modal__header">
+                    <h1 id="modal-heading-02" class="slds-modal__title slds-hyphenate">Booking Details</h1>
+                </div>
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-2">
+
+                    <!-- <lightning-record-edit-form density="compact"
+                                                        record-id={dataForModel.Id}
+                                                        object-api-name={objectapibooking}
+                                                        
+                                                        >
+                                        <lightning-input-field  field-name=""></lightning-input-field>               
+                                        <lightning-output-field field-name="Name"></lightning-output-field>
+                                        <lightning-output-field class="slds-size_1-of-4" field-name="Image__c"></lightning-output-field>
+                                        <lightning-output-field field-name="Cost_per_day__c"></lightning-output-field>
+                                        <lightning-output-field field-name="Milage__c"></lightning-output-field>
+                                        <lightning-output-field field-name="Model__c"></lightning-output-field>
+                                        <lightning-output-field field-name="Seat_cepacity__c"></lightning-output-field>
+                                        <lightning-output-field field-name="Type__c"></lightning-output-field>
+                                        <!-lightning-button label="view" variant="brand"  onclick={onclickHandle} data-id={eachcar.Id}></lightning-button->
+                                
+
+                                    </lightning-record-edit-form-->
+
+                    <lightning-input label="Booking date" type="date" onchange={onchangeHandle}></lightning-input>
+                    <lightning-input label="No of days" type="number" onchange={onchangeHandle}></lightning-input>
+                    <lightning-combobox
+                                        name="progress"
+                                        label="Pickup Location"
+                                        value={value}
+                                        placeholder="Select Location"
+                                        options={options}
+                                        onchange={onchangeHandle} ></lightning-combobox> <br><br>
+
+                    <template if:true={showBookingDetailsTemplate}>
+                        <b>
+                            <span> Booking Date : {confirmBookingDate}</span> <br> <br>
+                            <span>No of days : {ConfirmDays}</span> <br><br>
+                            <span>Pickup Location : {value}</span> <br><br>
+                            <span>Amount : {amount}</span>
+                        </b>
+
+
+                    </template>
+                </div>
+                <div class="slds-modal__footer">
+                    <button class="slds-button slds-button_neutral" onclick={cancelHandle}
+                        aria-label="Cancel and close">Cancel</button>
+                    <button class="slds-button slds-button_brand" onclick={bookNowHandeler1}>Proceed</button>
+                    <button if:true={paynow} class="slds-button slds-button_brand" onclick={payNowHandler}>Pay Now</button>
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open" role="presentation">
+
+        </div>
+    </template>
+
+
+
+</template>

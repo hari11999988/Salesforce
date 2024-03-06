@@ -1,0 +1,26 @@
+<template>
+    <lightning-card title="Field Dependency">
+
+        <lightning-combobox
+                            name="progress"
+                            label="State"
+                            value={value}
+                            placeholder="Select State"
+                            options={option}
+                            onchange={handleChange} >
+        </lightning-combobox>
+
+
+        <lightning-combobox
+                            name="progress"
+                            label="City"
+                            value={valueCity}
+                            placeholder="Select City"
+                            options={optionsCity}
+                            onchange={handleChangeCity} >
+        </lightning-combobox>
+
+    </lightning-card>
+    
+    
+</template>

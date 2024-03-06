@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Parent Componrnt">
+        <lightning-combobox
+                      label="Account"
+                      value={value}
+                      placeholder="Select Account"
+                      options={options}
+                      onchange={handleChanged} >
+        </lightning-combobox>
+
+        <c-account-lwc-component-child></c-account-lwc-component-child>
+    </lightning-card>
+    
+</template>

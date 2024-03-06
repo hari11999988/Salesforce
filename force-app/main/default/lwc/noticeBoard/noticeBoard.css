@@ -1,0 +1,51 @@
+/* noticeBoard.css */
+.notice-board {
+    max-width: 400px;
+    margin: auto;
+    overflow: hidden;
+	font-weight: bold;
+	border-image: url(border.png) 20% stretch;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    /*animation:  12s linear infinite;  Adjust animation duration */
+}
+/* @keyframes MoveUpDown {
+   0%, 100% {
+        bottom: 0;
+    }
+     50% {
+             bottom: 100px;
+    }
+} */
+
+li {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #BEBEBE;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-100%);
+    }
+    50% {
+        transform: translateY(-200%);
+    }
+    75% {
+        transform: translateY(-300%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}

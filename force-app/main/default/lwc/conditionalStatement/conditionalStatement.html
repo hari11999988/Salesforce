@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Conditional demo">
+
+        <lightning-button label={labelHandle} onclick={handeler} ></lightning-button>
+
+    </lightning-card>
+
+    <template if:true={show}>
+
+        <lightning-card title="xyz">{data}</lightning-card>
+
+    </template>
+    
+</template>

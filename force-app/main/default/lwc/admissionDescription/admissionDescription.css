@@ -1,0 +1,18 @@
+/* AdmissionDescription.css */
+.admission-description {
+    max-width: 800px;
+    margin: auto;
+    font-family: Arial, sans-serif;
+}
+
+h2, h3 {
+    color: #003366; /* IBS University official color, adjust as needed */
+	margin-bottom: 5pxpx;
+	margin-top: 10px;
+	font-size: 20px;
+}
+
+p {
+    color: #333;
+	word-spacing: 1px
+}

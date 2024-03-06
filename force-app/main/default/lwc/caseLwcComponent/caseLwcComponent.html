@@ -1,0 +1,42 @@
+<template>
+    
+
+    <lightning-card title="Case card" >
+        <!--lightning-icon icon-name="Utility:case"></lightning-icon>-->
+
+
+        <div class="slds-p-horizontal_x-small" >
+
+
+            <b >Status</b>
+        <lightning-combobox
+                            name="Case"
+                            variant="label-hidden"
+                            value={value}
+                            options={options}
+                            onchange={handleChange} class="slds-p-bottom_medium"  >
+        </lightning-combobox>
+
+        <template if:true={temp}>
+
+            <b >Status</b>
+            <lightning-combobox
+                            name="Case"
+                            variant="label-hidden"
+                            value={value2}
+                            options={option2}
+                            onchange={handleChange2}  class="slds-p-bottom_medium">
+        </lightning-combobox>
+
+        </template>
+
+        <template if:true={temp2}>
+            <b >Email</b>
+            <lightning-textarea  value={email} class="customHeight" variant="label-hidden"  ></lightning-textarea>
+        </template>
+
+    </div>
+
+    </lightning-card>
+    
+</template>

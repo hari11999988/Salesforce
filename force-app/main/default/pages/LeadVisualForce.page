@@ -1,0 +1,106 @@
+<apex:page controller="LeadVFpageController">
+ 
+    
+    <apex:form >
+        
+        <apex:pageBlock >
+ <!--------------------------------------------------NEW LEAD BLOCK ---------------------------------------------------------------------->
+            
+            
+            
+            <apex:pageBlockSection rendered="{!showNew}" columns="1">
+
+                    <center>
+                    <h1 style="font-size:20px" >NEW LEAD </h1>
+                    </center>
+                <apex:pageBlockSection title="lead information" >
+                    
+                     <apex:inputfield value="{!leadList.Email}"/>
+                     <apex:inputfield value="{!leadList.Lastname}"/>
+                     <apex:inputfield value="{!leadList.MobilePhone}"/>
+                     <apex:inputfield value="{!leadList.FirstName}"/>
+                     <apex:inputfield value="{!leadList.Status}"/> 
+                     <apex:inputfield value="{!leadList.Company}"/>
+                    
+                </apex:pageBlockSection>   
+                    
+                  
+                    
+               <apex:pageBlockSection title="Additional Information" > 
+                   
+                   <apex:inputfield value="{!leadList.ProductInterest__c}"/>
+                   <apex:inputfield value="{!leadList.CurrentGenerators__c}"/>
+                   <apex:inputfield value="{!leadList.SICCode__c    }"/>
+                   <apex:inputfield value="{!leadList.NumberofLocations__c  }"/>	
+                   <apex:inputfield value="{!leadList.Primary__c }"/>
+                                           
+               </apex:pageBlockSection>
+                                           
+               <apex:pageBlockSection title="Description Information">
+                                                                     
+                   <apex:inputfield value="{!leadList.Description   }"/>
+                   
+               </apex:pageBlockSection>
+               
+           
+         </apex:pageBlockSection>
+            
+            
+            
+  <!------------------------------------------------------- DETAILS BLOCK ------------------------------------------------------------------>
+
+            
+             <apex:pageBlockSection rendered="{!showDetail}" columns="1">
+            
+                    <center>
+                    <h1 style="font-size:20px" >Details </h1>
+                    </center>
+                <apex:pageBlockSection title="lead information">
+                    
+                     <apex:outputField value="{!leadList.Email}"/>
+                     <apex:outputField value="{!leadList.Lastname}"/>
+                     <apex:outputField value="{!leadList.MobilePhone}"/>
+                     <apex:outputField value="{!leadList.FirstName}"/>
+                     <apex:outputField value="{!leadList.Status}"/> 
+                     <apex:outputField value="{!leadList.Company}"/>
+                    
+                </apex:pageBlockSection>   
+                    
+                  
+                    
+               <apex:pageBlockSection title="Additional Information"> 
+                   
+                   <apex:outputField value="{!leadList.ProductInterest__c}"/>
+                   <apex:outputField value="{!leadList.CurrentGenerators__c}"/>
+                   <apex:outputField value="{!leadList.SICCode__c    }"/>
+                   <apex:outputField value="{!leadList.NumberofLocations__c  }"/>	
+                   <apex:outputField value="{!leadList.Primary__c }"/>
+                                           
+               </apex:pageBlockSection>
+                                           
+               <apex:pageBlockSection title="Description Information">
+ 
+                   <apex:outputField value="{!leadList.Description   }"/>
+                   
+               </apex:pageBlockSection>
+               
+                                                                  
+
+                      
+              
+       </apex:pageBlockSection>
+      
+ <!------------------------------------------------------ BUTTONS SECTION ------------------------------------------------------------->
+            
+       <apex:pageBlockButtons >  
+                                                   
+                <apex:commandButton value="Save" action="{!Save}" />                 
+                <apex:commandButton value="Cancel" oncomplete="window.location.reload();"/> 
+                <apex:commandButton value="Edit" action="{!Edit}" /> 
+                  
+       </apex:pageBlockButtons>
+                                                                                    
+                                                                 
+     </apex:pageBlock>          
+    </apex:form>  
+</apex:page>

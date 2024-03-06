@@ -1,0 +1,24 @@
+<template>
+
+    <lightning-card title="Search contact case">
+
+        <lightning-input label="Search"  placeholder="Search Email" onchange={searchHandle}></lightning-input>
+        <lightning-button label="Search"
+                          onclick={handleClick}>
+        </lightning-button>
+
+    </lightning-card>
+
+    <lightning-card  title="Contact :" >
+        
+        <div style="height: 150px;">
+            <lightning-datatable
+                    key-field="id"
+                    data={result}
+                    columns={columns}>
+            </lightning-datatable>
+        </div>
+         
+        </lightning-card>
+    
+</template>

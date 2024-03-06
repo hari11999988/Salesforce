@@ -1,0 +1,65 @@
+<template>
+    <!-- <video width="400" controls="controls">
+        <source src={Video} type="video/mp4"/>
+    </video> -->
+    
+    <div class="slds-grid slds-gutters">
+        <div class="slds-col slds-size_6-of-12">
+
+            <video width="100%" controls="controls" autoplay muted playsinline> 
+                <source src={video1} type="video/mp4"/>
+                <source src="mov_bbb.ogg" type="video/ogg">
+            </video>
+            <!-- <video
+                    src="/videos.mp4"
+                    ref={video1}
+                    muted
+                    autoplay
+                    loop 
+                    ></video> -->
+
+                    <!-- <lightning-carousel-image style="height: 70%;"
+                            src ={testImage} alt="Salesforce Image1"
+                            href = "javascript:void(0);">
+                        </lightning-carousel-image> -->
+        </div>
+
+        <div class="slds-col slds-size_6-of-12">
+        
+            <div >
+                <!-- class="slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small"   class="slds-size_1-of-1"-->
+                <div >
+                    <lightning-carousel scroll-duration="3">
+                        
+                        <lightning-carousel-image
+                            src ={picture1} alt="Salesforce Image1"
+                            href = "javascript:void(0);">
+                        </lightning-carousel-image>
+        
+                        <lightning-carousel-image
+                            src ={picture2} alt="Salesforce Image2"
+                            href = "javascript:void(0);">
+                        </lightning-carousel-image>
+        
+                        <!-- <lightning-carousel-image
+                            src ={picture3} alt="Salesforce Image3"
+                            href = "javascript:void(0);">
+                        </lightning-carousel-image>
+        
+                        <lightning-carousel-image
+                        src ={picture4} alt="Salesforce Image3"
+                        href = "javascript:void(0);">
+                    </lightning-carousel-image> -->
+        
+                   
+                    </lightning-carousel>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+
+        
+    
+    
+</template>

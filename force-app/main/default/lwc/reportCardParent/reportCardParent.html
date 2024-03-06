@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="parent component">
+        <template if:true={count}>
+
+            <p>count : {count}</p><br>
+            <p>{parentvalue}</p>
+
+            <!--template for:each={parentvalue} for:item="val">
+                <p>val</p>
+            </template-->
+
+
+        </template>
+        <c-report-card-child onreflect={onreflectHandler}></c-report-card-child>
+
+    </lightning-card>
+    
+
+    
+</template>

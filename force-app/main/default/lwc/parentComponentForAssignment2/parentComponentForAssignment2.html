@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="parent Component">
+
+        <lightning-combobox label="country"
+                            value={values}
+                            placeholder="Select Country"
+                            options={option}
+                            onchange={onchangehandle}>
+
+        </lightning-combobox>
+
+        <lightning-button onclick={show} label="show"></lightning-button>
+        <c-child-component-ass></c-child-component-ass>
+    </lightning-card>
+    
+</template>

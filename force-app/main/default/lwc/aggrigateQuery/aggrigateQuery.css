@@ -1,0 +1,8 @@
+:host {
+    --sds-c-textarea-sizing-min-height: 75px;
+    --sds-c-textarea-sizing-max-height: 76px;
+ }
+
+ .THIS.textarea:focus {
+    resize: none;
+}

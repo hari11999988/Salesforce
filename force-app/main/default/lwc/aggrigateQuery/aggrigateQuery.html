@@ -1,0 +1,44 @@
+<template>
+    <lightning-card>
+        <div class="slds-p-horizontal_small">
+            <lightning-combobox
+                                name="Select Object"
+                                label="Select Object"
+                                value={Objectvalue}
+                                placeholder="Select Object"
+                                options={Objectoptions}
+                                onchange={handleChangeObject} >
+            </lightning-combobox>
+        </div>   
+        
+        <div class="slds-p-horizontal_small">
+            <lightning-combobox
+                                name="Select Field"
+                                label="Select Field"
+                                value={Fieldvalue}
+                                placeholder="Select Field"
+                                options={Fieldoptions}
+                                onchange={handleChangeField} >
+            </lightning-combobox>
+        </div>    
+
+        <div class="slds-p-horizontal_small">
+            <lightning-combobox
+                                name="Select function"
+                                label="Select function"
+                                value={functionvalue}
+                                placeholder="Select function"
+                                options={functionoptions}
+                                onchange={handleChangefunction} >
+            </lightning-combobox>
+        </div>    
+
+
+        <div class="slds-p-horizontal_small">
+            <lightning-textarea label="Query result" read-only="true" class="textarea" value={textareavalue}></lightning-textarea>
+
+        </div>
+
+    </lightning-card>
+    
+</template>

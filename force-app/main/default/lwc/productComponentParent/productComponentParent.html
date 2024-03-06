@@ -1,0 +1,24 @@
+<template>
+
+    <lightning-card>
+        <lightning-input type="checkbox" label="Watch" value={value} onchange={onclickHandler} checked={watch} > </lightning-input>
+        
+        <lightning-input type="checkbox" label="Shoes" value={value} onchange={onclickHandler} checked={shoes} > </lightning-input>
+
+        <template if:true={count}>
+            <span><b>Count : </b>{count}</span>
+        </template>
+       
+    </lightning-card>
+
+    
+    <template if:true={childcomponent}>
+
+        <c-prodect-component-child onmycustomevent={onselectEventHandle}></c-prodect-component-child>
+    </template>
+
+  
+
+
+    
+</template>

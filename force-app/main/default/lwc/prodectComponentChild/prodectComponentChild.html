@@ -1,0 +1,29 @@
+<template>
+
+    <template if:true={data}>
+        
+            <lightning-card title="Product Details">
+
+
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col">
+                      <span> <b>Brand</b> : {Brand}</span> <br>
+                      <span> <b>Price</b> : {Price}</span>  <br>
+                      <span> <b>Color</b> : {Color}</span>
+                    </div>
+                    <div class="slds-col">
+                        <div  class="slds-size_1-of-12">
+                            <img src={image} alt="">
+                        </div>
+                    </div>
+                  </div>
+
+        
+                <lightning-button label="Add" onclick={onclickHandler} ></lightning-button>
+                
+        
+            </lightning-card>
+            
+
+    </template>
+</template>

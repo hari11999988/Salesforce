@@ -1,0 +1,13 @@
+<template>
+    <lightning-card  title="ADMISSION FORM" icon-name = "standard:contact" style="border:none">
+        <div class="slds-p-horizontal_medium">
+            <lightning-record-form
+            object-api-name={objectName}
+            fields={myFields}
+            onsuccess={handleAccountCreated}
+            columns="2" 
+            ></lightning-record-form>
+        </div>
+        
+    </lightning-card>
+</template>

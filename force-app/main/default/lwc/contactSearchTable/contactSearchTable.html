@@ -1,0 +1,64 @@
+<template>
+    <lightning-card title="Contact">
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col">
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-size_2-of-3">
+                        <div class="slds-p-left_xx-small">
+                            <lightning-input  placeholder="Enter email or name" onchange={inputHandler}></lightning-input> 
+                        </div>
+                    </div>
+                    <div class="slds-col slds-size_1-of-3"> 
+                        <div class="slds-p-top_large">
+                            <lightning-button onclick={searchHandel} label="Search" variant="brand"></lightning-button>
+                        </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="slds-col">
+                <div class="slds-p-horizontal_large">
+                    <lightning-combobox
+                                        value={value}
+                                        placeholder="5"
+                                        options={options}
+                                        onchange={handleChange} >
+                    </lightning-combobox>
+                </div>
+            </div>
+          </div><br>
+
+          
+          
+          
+          
+          
+          
+          
+          <div class="slds-p-left_xx-small">
+              <lightning-datatable key-field="id"
+                                   data={recordsToDisplay}
+                                   columns={column}
+                                   hide-checkbox-column="true">
+              </lightning-datatable>
+          </div> <br>
+          <div>
+             <span class="slds-p-horizontal_xx-small">
+                 <lightning-button label="First" variant="brand" onclick={firstHandle}></lightning-button>
+             </span>
+             <span class="slds-p-horizontal_xx-small">
+                 <lightning-button label="Previous" variant="brand" onclick={previousPage}></lightning-button>
+             </span>
+             <span class="slds-p-horizontal_xx-small">
+                 <lightning-button label="Next" variant="brand" onclick={nextPage}></lightning-button>
+             </span>
+             <span class="slds-p-horizontal_xx-small">
+                 <lightning-button label="Last" variant="brand" onclick={lastPage}></lightning-button>
+             </span>
+          </div>
+
+       
+           
+
+    </lightning-card>
+    
+</template>
