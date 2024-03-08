@@ -1,0 +1,24 @@
+.hedding{
+    font-size: 14px;
+    font-weight: 600;
+    margin-left: 5px;
+}
+.outputField{
+    height: 2rem;
+    width: -webkit-fill-available;
+    border-radius: 7px;
+    padding: 1rem;
+    background: white;
+}
+.cardDetails{
+    border: 2px solid gainsboro;
+    border-radius: 7px;
+    background: white;
+}
+.rupeeSymbol{
+    padding-left: 10px;
+    font-size: 17px;
+    position: absolute;
+    padding-top: 5px;
+    color: dimgray;
+}

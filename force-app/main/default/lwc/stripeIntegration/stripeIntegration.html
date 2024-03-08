@@ -1,0 +1,50 @@
+<template>
+
+    <lightning-layout size="12">
+        <lightning-layout-item size="4"></lightning-layout-item>
+        <lightning-layout-item size="4">
+
+            <article class="slds-card" style="background-color: rgb(241, 238, 238);">
+                <div class="slds-card__header slds-grid">
+                    <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                        <div class="slds-media__figure">
+                            <lightning-icon icon-name="standard:contract_payment" alternative-text="Secure Payment" ></lightning-icon>
+                        </div>
+                        <div class="slds-media__body">
+                            <h2 class="slds-card__header-title">
+                                <span class="slds-text-title_caps">Secure Payment</span>
+                            </h2>
+                        </div>
+                    </header>
+                </div>
+                <div class="slds-card__body slds-card__body_inner">
+                    <div class="slds-p-top_large">
+                        <span class="hedding">Name</span>
+                        <div>
+                            <input class="outputField" type="text" value={studentDetail.Name} disabled>
+                        </div>
+                    </div>
+                    <div class="slds-p-top_large">
+                        <span class="hedding">Amount</span>
+                        <div>
+                            <span class="rupeeSymbol">&#8377;</span>
+                            <input style="padding-left: 20px;" class="outputField" type="number" value="250" disabled>
+                        </div>
+                    </div>
+                    <div class="slds-p-top_large">
+                        <span class="hedding">Card Details</span>
+                        <div class=" cardDetails slds-p-around_xx-small">
+                            <div class="card-element slds-p-around_xx-small"></div>
+                            <div id="card-errors" role="alert" class="slds-text-color_error"></div>
+                        </div>
+                    </div>
+                    <div class="slds-p-vertical_large">
+                        <button class="slds-button slds-button_brand slds-button_stretch" onclick={handlePayment}>Pay Now</button>
+                    </div>
+                </div>
+            </article>
+        </lightning-layout-item>
+        <lightning-layout-item size="4"></lightning-layout-item>
+    </lightning-layout>
+    
+</template>

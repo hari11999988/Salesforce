@@ -1,13 +1,70 @@
 <template>
-    <lightning-card  title="ADMISSION FORM" icon-name = "standard:contact" style="border:none">
-        <div class="slds-p-horizontal_medium">
-            <lightning-record-form
-            object-api-name={objectName}
-            fields={myFields}
-            onsuccess={handleAccountCreated}
-            columns="2" 
-            ></lightning-record-form>
-        </div>
+    <template if:false={nextPage}>
+        <lightning-card  title="ADMISSION FORM" icon-name = "standard:contact" style="border:none">
+            <!-- <div class="slds-p-horizontal_medium">
+                <lightning-record-form
+                object-api-name={objectName}
+                fields={myFields}
+                onsuccess={handleAccountCreated}
+                columns="2" 
+                ></lightning-record-form>
+            </div> -->
+
+            <lightning-layout class="slds-p-around_small">
+                <lightning-layout-item size="6" class="slds-p-horizontal_small">
+                    <label for="fname" class="hedding">Name</label>
+                    <input type="text" name="Name" class="outputField" placeholder="Enter Name" onchange={handleChangeField}><br><br>
+                    <label for="lname" class="hedding">Category</label>
+                    <input type="text" name="Category" class="outputField" placeholder="Enter Category" onchange={handleChangeField}><br><br>
+                    <label for="email" class="hedding">Email</label>
+                    <input type="text" name="Email" class="outputField" placeholder="Enter Email"><br><br>
+                    <label for="lname" class="hedding">Father’s Occupation</label>
+                    <input type="text" name="FatherOccupation" class="outputField" placeholder="Enter Father’s Occupation" onchange={handleChangeField}><br><br>
+                    <label for="lname" class="hedding">Course</label>
+                    <select onchange={handleCourse} class="combobox">
+                        <template if:true={options} for:each={options} for:item="each">
+                            <option key={each} value={each} >{each}</option>
+                        </template>
+                      </select><br><br>
+                </lightning-layout-item>
+                <lightning-layout-item size="6" class="slds-p-horizontal_small">
+                    <label for="fname" class="hedding">Gender</label>
+                    <select onchange={handleGender} class="combobox">
+                        <option>--Please Select--</option>
+                        <option>Male</option>
+                        <option>Female</option>
+                    </select><br><br>
+                    <label for="lname" class="hedding">DOB</label>
+                    <input type="date" name="DOB" class="outputField" placeholder="Enter DOB" onchange={handleChangeField}><br><br>
+                    <label class="hedding" >Father’s / Husband Name</label>
+                    <input type="text" name="FatherHusbandName" class="outputField" placeholder="Enter Father’s / Husband Name" onchange={handleChangeField}><br><br>
+                    <label for="lname" class="hedding">Mother’s Name</label>
+                    <input type="text" name="MotherName" class="outputField" placeholder="Enter Mother’s Name" onchange={handleChangeField}><br><br>
+                    <label for="lname" class="hedding">Stream</label>
+                    <select onchange={handleStream} class="combobox">
+                        <template if:true={streamOption} for:each={streamOption} for:item="each">
+                            <option key={each} value={each} >{each}</option>
+                        </template>
+                    </select>
+                </lightning-layout-item>
+            </lightning-layout>
+            <lightning-layout>
+                <lightning-layout-item size="3"></lightning-layout-item>
+                <lightning-layout-item size="6">
+                    <label for="lname" class="hedding">Permanent Address</label><br>
+                    <textarea class="textAreacss" onchange={handleChangeField} rows="4" cols="50" name="PermanentAddress" form="usrform" placeholder ="Enter address here...">
+                  </textarea>
+                </lightning-layout-item>
+                <lightning-layout-item size="3"></lightning-layout-item>
+            </lightning-layout>
+
+            <div class="slds-p-vertical_medium">
+                <button class="slds-button slds-button_brand  slds-align_absolute-center" onclick={handleNext}>Next</button>
+            </div>
+        </lightning-card>
+    </template>
+    <template if:true={nextPage}>
+        <c-stripe-integration student-detail={studentDetails}></c-stripe-integration>
+    </template>
         
-    </lightning-card>
 </template>

@@ -1,3 +1,29 @@
 .dummy{
 	color : black;
 }
+.outputField{
+    height: 2rem;
+    width: -webkit-fill-available;
+    border-radius: 7px;
+    padding: 1rem;
+    background: white;
+}
+.hedding{
+    font-size: 14px;
+    font-weight: 600;
+    margin-left: 5px;
+}
+.textAreacss{
+	height: 100px;
+    width: -webkit-fill-available;
+    border-radius: 7px;
+    padding: 1rem;
+	border: 2px solid black;
+}
+.combobox{
+	height: 2rem;
+    width: -webkit-fill-available;
+    border-radius: 7px;
+    padding: 1px;
+    border: 2px solid black;
+}
